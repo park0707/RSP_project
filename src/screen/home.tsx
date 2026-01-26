@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "@tanstack/react-router";
+
 import Header from "./home_parts/header.tsx";
 import Body from "./home_parts/body.tsx";
 export default function Home() {

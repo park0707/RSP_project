@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import React, { useState } from "react";
+import { useState } from "react";
 import Setting from "./home_parts/setting.tsx";
 import Modal from "./home_parts/modal.tsx";
 import Sisser from "./cards/sisser.tsx";

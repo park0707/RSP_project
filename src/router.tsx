@@ -6,7 +6,6 @@ import Cards from './screen/cards.tsx' // 카드 화면 컴포넌트
 import Rule from './screen/rule.tsx' // 규칙 설명 화면 컴포넌트
 import Single from './screen/single.tsx' // 싱글 플레이 화면 컴포넌트
 import PerDeck from './screen/singles/perdeck.tsx' // 덱 선택 화면 컴포넌트
-import { root } from 'postcss'
 import Play from './screen/play.tsx'
 // 루트 라우트: 페이지 전체 레이아웃을 담당
 const rootRoute = createRootRoute({

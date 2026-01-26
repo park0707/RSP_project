@@ -1,11 +1,11 @@
-import React, { use } from "react";
+
 import { useState,useRef,useEffect } from "react";
 import Profile_unlog from "./profile_unlog.tsx";
-import Profile_log from "./profile_log.tsx";
+//import Profile_log from "./profile_log.tsx";
 import Modal from "./modal.tsx";
 import Setting from "./setting.tsx";
 export default function Header() {
-  const [isLogin, setIsLogin] = useState(false);
+//  const [isLogin, setIsLogin] = useState(false);
   const [isopen, setIsOpen] = useState(false);
   const [settingopen, setSettingopen] = useState(false);
 

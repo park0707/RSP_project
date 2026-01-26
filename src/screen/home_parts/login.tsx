@@ -1,13 +1,11 @@
 import { useState, type ChangeEvent} from "react";
 export default function Signup() {
   const [id,setid] = useState(" ");
-  const [pw,setpw] = useState(" ");
+  const [pw] = useState(" ");
   const handleid = (e:ChangeEvent<HTMLInputElement>) => {
     setid(e.target.value);
   };
-  const handlepw = (e:ChangeEvent<HTMLInputElement>) => {
-    setpw(e.target.value);
-  };
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("아이디:", id);

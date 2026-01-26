@@ -1,4 +1,4 @@
-import React, { use } from "react";
+
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import Setting from "../home_parts/setting";

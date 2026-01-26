@@ -1,7 +1,5 @@
-import React from "react";
 import Modal from "./modal";
 import { useState } from "react";
-import { useEffect,useRef } from "react";
 import { Link } from "@tanstack/react-router";
 export default function Body() {
   const [ismodalopen, setIsModalOpen] = useState(false);

@@ -1,6 +1,6 @@
-import React from "react";
+
 import Setting from "./home_parts/setting";
-import { Link, Outlet } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import Modal from "./home_parts/modal";
 export default function Single() {

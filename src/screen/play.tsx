@@ -1,11 +1,11 @@
-import React, { use, useActionState } from "react";
+import React from "react";
 import { Link } from "@tanstack/react-router";
 import Setting from "./home_parts/setting";
 import { useState,useEffect } from "react";
 import { useCard } from "../deckcontent";
 import Modal from "./home_parts/modal";
 import { specialeffect } from "./gamelogic/singlelogic";
-import { useAudio } from "../audiocontext";
+
 export default function Play() {
     const {cards,removecards} = useCard();
     const [settingopen, setIsSettingOpen] = React.useState(false);
@@ -28,7 +28,7 @@ export default function Play() {
     const [oppflip, setoppFlip] = React.useState<'opening' | 'closing' | 'none'>('none');
     const [gamestart,setGamestart] = useState(true)
     const [gameend,setGameend] = useState(false);
-    let vsresult:number = 0; // 1: 내가 이김, 0: 비김, -1: 내가 짐
+    
     const getcardname = (id:number) => {
         switch(id){
             case 1: return "가위";

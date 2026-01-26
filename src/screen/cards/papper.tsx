@@ -1,4 +1,4 @@
-import React from "react";
+
 export default function Papper() {
     return (
         <div className="cards text-white text-[34px] flex flex-col items-center justify-center pt-10 pb-10 gap-10">

@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import Setting from "./home_parts/setting";
-import React from "react";
+
 import Modal from "./home_parts/modal";
 export default function Rule () {
     const [settingopen, setSettingopen] = useState(false);

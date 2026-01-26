@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import './App.css'
-import Home from './screen/home.tsx'
 import { Outlet } from '@tanstack/react-router'
 import { AudioProvider } from './audiocontext.tsx'
 import { useAudio } from './audiocontext.tsx'
 import { CardProvider } from './deckcontent.tsx'
 function AppContent() {
-  const { clickvolume, clickmute, allvolume, allmute,effectmute,effectvolume } = useAudio();
+  const { clickvolume, clickmute, allvolume, allmute} = useAudio();
   //효과음 함수도 나중에 만들어야 함
   const playclicksound = () => {
     if (clickmute || allmute) return;
