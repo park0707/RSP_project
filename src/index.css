@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+@import "tailwindcss";
+
+
+.home_button {
+  @apply rounded-[30px] border border-white border-2 w-[327px] h-[79px] justify-center items-center pt-[5px]
+
+}
+.profile-button {
+  @apply
+  w-[128px] h-[57px] bg-[#130636] rounded-[15px] text-white text-[25px] 
+  
+}
+.card {
+  @apply h-full w-[370px] object-cover cursor-pointer border-5 border-white rounded-[15px] px-0 py-0;
+}
+
+.back_button {
+  @apply px-1 py-1 text-white border-white border-3 text-[33px]
+}
+
+/*카드 설명*/
+.cards{ 
+  @apply bg-[#130637] border-white border-5 rounded-[30px] w-[428px] h-[615px]
+}
+
+html, body, #root {
+  min-width: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Jua', sans-serif;
+  overflow: hidden;
+}
+
+@theme {
+  --color-base:#160741;
+  --breakpoint-mid:840px;
+}
+
+@layer {
+  .bg-base-color {
+    background-color: var(--color-base);
+    background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 0%,rgba(1,0,2,100) 250%);
+    background-blend-mode: normal;
+    background-size: cover;
+    background-position: center;
+  }
+  
+}
