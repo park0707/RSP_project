@@ -1,7 +1,7 @@
 
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import Setting from "../menu_parts/menu";
+import Menu from "../menu_parts/menu";
 import Modal from "../home_parts/modal";
 import { useEffect } from "react";
 import { useCard } from "../../deckcontent";
@@ -162,7 +162,7 @@ export default function PerDeck() {
                 </div>
             </div>
             <Modal isopen={issettingopen} onClose={()=>setIsSettingOpen(false)}>
-                <Setting />
+                <Menu />
             </Modal>
             <Modal isopen={notopened} onClose={()=>setNotOpened(false)}>
                 <div className="bg-[#130637] border-white border-5 rounded-[30px] w-[728px] h-[215px] text-white flex items-center justify-center text-[36px]">

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
-import Setting from "./menu_parts/menu";
+import Menu from "./menu_parts/menu";
 import { useState,useEffect } from "react";
 import { useCard } from "../deckcontent";
 import Modal from "./home_parts/modal";
@@ -272,7 +272,7 @@ export default function Play() {
                 </div>
             </div>
             <Modal isopen={settingopen} onClose={()=>setIsSettingOpen(false)}>
-                <Setting />
+                <Menu />
             </Modal>
             <Modal isopen={notreadymodal} onClose={()=>setNotReadyModal(false)}>
                 <div className="text-white text-[24px] bg-[#130637] border-4 border-whtite p-5 rounded-[10px]">

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import Setting from "./menu_parts/menu.tsx";
+import Menu from "./menu_parts/menu.tsx";
 import Modal from "./home_parts/modal.tsx";
 import Sisser from "./cards/sisser.tsx";
 import Rock from "./cards/rock.tsx";
@@ -103,7 +103,7 @@ export default function Cards() {
                 <Watch/>
             </Modal>
             <Modal isopen={settingopen} onClose={()=>setSettingopen(false)}>
-                    <Setting/>
+                    <Menu/>
             </Modal>
             <Modal isopen={sisser} onClose={()=>setsisser(false)}>
                 <Sisser/>

@@ -1,5 +1,5 @@
 
-import Setting from "./menu_parts/menu";
+import Menu from "./menu_parts/menu";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import Modal from "./home_parts/modal";
@@ -34,7 +34,7 @@ export default function Single() {
                     </div>
                 </div>
                 <Modal isopen={issettingopen} onClose={()=>setIsSettingOpen(false)}>
-                    <Setting />
+                    <Menu />
                 </Modal>
                 <Modal isopen={chal} onClose={()=>{setIsChal(false)}}>
                     <div className="bg-[#130637] border-white border-5 rounded-[30px] w-[628px] h-[215px] text-white flex items-center justify-center">

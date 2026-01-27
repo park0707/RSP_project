@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import Setting from "./menu_parts/menu";
+import Menu from "./menu_parts/menu";
 
 import Modal from "./home_parts/modal";
 import { rule } from "postcss";
@@ -90,7 +90,7 @@ export default function Rule () {
 
 
             <Modal isopen={settingopen} onClose={()=>setSettingopen(false)}>
-                <Setting/>
+                <Menu/>
             </Modal>
             
             
