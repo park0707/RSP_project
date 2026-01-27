@@ -3,9 +3,10 @@ import { useState } from "react";
 import Setting from "./menu_parts/menu";
 
 import Modal from "./home_parts/modal";
+import { rule } from "postcss";
 export default function Rule () {
     const [settingopen, setSettingopen] = useState(false);
-    const [ruletype,setRuletype] = useState(false);
+    const [ruletype,setRuletype] = useState(false); //false면 싱글 & 멀티 플레이 true면 도전
     return (
         <div className="flex flex-col bg-base-color w-screen h-screen">
             <div className="pt-3 flex justify-between px-4">
@@ -17,11 +18,17 @@ export default function Rule () {
                            w-[50px] h-[50px] cursor-pointer
                            "/>
             </div>
-            <div className="flex justify-center text-white text-[45px] gap-[30px]">
-                <div className="cursor-pointer border-4 border-white px-2 py-2 rounded-[20px]" onClick={()=>setRuletype(false)}>
+            <div className="flex justify-center  text-[45px] gap-[30px]">
+                <div className={`
+                    cursor-pointer px-2 py-2 rounded-[20px] border-4
+                    ${ruletype ? "text-slate-400 border-slate-500" : "text-white border-white"}
+                `} onClick={()=>setRuletype(false)}>
                     싱글 플레이 & 멀티 플레이
                 </div>
-                <div className="cursor-pointer border-4 border-white px-2 py-2 rounded-[20px]" onClick={()=>setRuletype(true)}>
+                <div className={`
+                    cursor-pointer px-2 py-2 rounded-[20px] border-4
+                    ${ruletype ? "text-white border-white" : "text-slate-400 border-slate-500"}
+                `} onClick={()=>setRuletype(true)}>
                     도전
                 </div>
             </div>
