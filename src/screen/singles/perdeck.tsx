@@ -6,7 +6,7 @@ import Modal from "../home_parts/modal";
 import { useEffect } from "react";
 import { useCard } from "../../deckcontent";
 export default function PerDeck() {
-    const [issettingopen, setIsSettingOpen] = useState(false);
+    const [menuopen, setMenuopen] = useState(false);
     const [isspecial, setIsSpecial] = useState(false);
     const [totalcommoncard,settotalcommoncard] = useState(0);
     const [totalspecialcard,settotalspecialcard] = useState(0);
@@ -104,7 +104,7 @@ export default function PerDeck() {
                         )
                     }
                 </div>
-                <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setIsSettingOpen(!issettingopen)}
+                <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(!menuopen)}
                 className="mid:w-[70px] mid:h-[70px]
                 w-[50px] h-[50px] cursor-pointer
                 "/>
@@ -161,9 +161,7 @@ export default function PerDeck() {
                     </div>
                 </div>
             </div>
-            <Modal isopen={issettingopen} onClose={()=>setIsSettingOpen(false)}>
-                <Menu />
-            </Modal>
+            <Menu open={menuopen} setOpen={setMenuopen}/>
             <Modal isopen={notopened} onClose={()=>setNotOpened(false)}>
                 <div className="bg-[#130637] border-white border-5 rounded-[30px] w-[728px] h-[215px] text-white flex items-center justify-center text-[36px]">
                     일반 카드를 {maxcommoncard-totalcommoncard}장, 특수 카드를 {maxspecialcard-totalspecialcard}장 더 골라주세요.

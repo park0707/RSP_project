@@ -18,9 +18,9 @@ import Highriskhighreturn from "./cards/highriskhighreturn.tsx";
 import Cheat from "./cards/cheat.tsx";
 import Moordo from "./cards/moordo.tsx";
 export default function Cards() {
-    const [settingopen, setSettingopen] = useState(false);
+    const [menuopen, setMenuopen] = useState(false);
     const togglesetting = () => {
-        setSettingopen(!settingopen);
+        setMenuopen(!menuopen);
     };
     const [moordo,setmoordo] = useState(false);
     const [cheat,setcheat] = useState(false);
@@ -102,9 +102,7 @@ export default function Cards() {
             <Modal isopen={watch} onClose={()=>setwatch(false)}>
                 <Watch/>
             </Modal>
-            <Modal isopen={settingopen} onClose={()=>setSettingopen(false)}>
-                    <Menu/>
-            </Modal>
+            <Menu open={menuopen} setOpen={setMenuopen}/>
             <Modal isopen={sisser} onClose={()=>setsisser(false)}>
                 <Sisser/>
             </Modal>

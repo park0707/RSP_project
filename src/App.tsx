@@ -3,6 +3,7 @@ import { Outlet } from '@tanstack/react-router'
 import { AudioProvider } from './audiocontext.tsx'
 import { useAudio } from './audiocontext.tsx'
 import { CardProvider } from './deckcontent.tsx'
+import { AuthProvider } from './logincontext.tsx'
 function AppContent() {
   const { clickvolume, clickmute, allvolume, allmute} = useAudio();
   //효과음 함수도 나중에 만들어야 함
@@ -24,11 +25,13 @@ function AppContent() {
 function App() {
   
     return (
-    <CardProvider>
-      <AudioProvider>
-        <AppContent />
-      </AudioProvider>
-    </CardProvider>
+    <AuthProvider>
+      <CardProvider>
+        <AudioProvider>
+          <AppContent />
+        </AudioProvider>
+      </CardProvider>
+    </AuthProvider>
   );
 }
 

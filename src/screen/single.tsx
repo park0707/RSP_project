@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import Modal from "./home_parts/modal";
 export default function Single() {
-    const [issettingopen, setIsSettingOpen] = useState(false);
+    const [menuopen,setMenuopen] = useState(false)
     const [chal,setIsChal] = useState(false)
     const [random,setRandom] = useState(false)
     return (
@@ -13,7 +13,7 @@ export default function Single() {
                             <Link to="/">
                                     <div className="back_button">뒤로가기</div>
                             </Link>
-                            <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setIsSettingOpen(!issettingopen)}
+                            <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(true)}
                             className="mid:w-[70px] mid:h-[70px]
                             w-[50px] h-[50px] cursor-pointer
                             "/>
@@ -33,9 +33,7 @@ export default function Single() {
                         도전
                     </div>
                 </div>
-                <Modal isopen={issettingopen} onClose={()=>setIsSettingOpen(false)}>
-                    <Menu />
-                </Modal>
+                <Menu open={menuopen} setOpen={setMenuopen}/>
                 <Modal isopen={chal} onClose={()=>{setIsChal(false)}}>
                     <div className="bg-[#130637] border-white border-5 rounded-[30px] w-[628px] h-[215px] text-white flex items-center justify-center">
                         <p className="text-[35px] flex items-center justify-center">

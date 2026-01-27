@@ -8,7 +8,7 @@ import { specialeffect } from "./gamelogic/singlelogic";
 
 export default function Play() {
     const {cards,removecards} = useCard();
-    const [settingopen, setIsSettingOpen] = React.useState(false);
+    const [menuopen, setMenuopen] = React.useState(false);
     const [currentround, setcurrentround] = React.useState(1);
     const totalround = 9;
     const [myscore, setMyScore] = React.useState(0);
@@ -186,7 +186,7 @@ export default function Play() {
                         <Link to="/perdeck">
                                 <div className="back_button">뒤로가기</div>
                         </Link>
-                        <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setIsSettingOpen(!settingopen)}
+                        <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(!menuopen)}
                         className="mid:w-[70px] mid:h-[70px]
                         w-[50px] h-[50px] cursor-pointer
                         "/>
@@ -271,9 +271,7 @@ export default function Play() {
                     </div>
                 </div>
             </div>
-            <Modal isopen={settingopen} onClose={()=>setIsSettingOpen(false)}>
-                <Menu />
-            </Modal>
+            <Menu open={menuopen} setOpen={setMenuopen}/>
             <Modal isopen={notreadymodal} onClose={()=>setNotReadyModal(false)}>
                 <div className="text-white text-[24px] bg-[#130637] border-4 border-whtite p-5 rounded-[10px]">
                     일반 카드를 반드시 선택해야 합니다.

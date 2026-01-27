@@ -1,16 +1,10 @@
 
 import { useState } from "react";
-import Modal from "./modal.tsx";
 import Menu from "../menu_parts/menu.tsx";
 export default function Header() {
 //  const [isLogin, setIsLogin] = useState(false);
 
-  const [settingopen, setSettingopen] = useState(false);
-
-  
-  const togglesetting = () => {
-    setSettingopen(!settingopen);
-  };
+  const [menuopen,setMenuopen] = useState(false)
 
   return (
     <div className="relative">
@@ -24,16 +18,14 @@ export default function Header() {
         mid:pr-[31px] mid:gap-[43px]
         "  >
           
-          <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={togglesetting}
+          <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(true)}
           className="mid:w-[70px] mid:h-[70px]
           w-[50px] h-[50px] cursor-pointer
           "/>
           
         </div>
       </div>
-      <Modal isopen={settingopen} onClose={()=>setSettingopen(false)}>
-        <Menu/>
-      </Modal>
+      <Menu open={menuopen} setOpen={setMenuopen}/>
     </div>
     
   );
