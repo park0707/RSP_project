@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { back } from "./back.ts";
 import { useState } from "react";
 import Menu from "./menu_parts/menu.tsx";
 import Modal from "./home_parts/modal.tsx";
@@ -17,6 +17,7 @@ import Defeat from "./cards/defeat.tsx";
 import Highriskhighreturn from "./cards/highriskhighreturn.tsx";
 import Cheat from "./cards/cheat.tsx";
 import Moordo from "./cards/moordo.tsx";
+
 export default function Cards() {
     const [menuopen, setMenuopen] = useState(false);
     const togglesetting = () => {
@@ -38,12 +39,11 @@ export default function Cards() {
     const [block,setblock] = useState(false);
     const [steel,setsteel] = useState(false);
     const [watch,setwatch] = useState(false);
+    const goback = back();
     return (
         <div className="flex flex-col bg-base-color w-screen h-screen">
             <div className="pt-3 flex justify-between px-4">
-                <Link to="/">
-                        <button className="back_button">뒤로가기</button>
-                </Link>
+                <button className="back_button" onClick={()=>{goback()}}>뒤로가기</button>
                 <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={togglesetting}
                 className="mid:w-[70px] mid:h-[70px]
                 w-[50px] h-[50px] cursor-pointer

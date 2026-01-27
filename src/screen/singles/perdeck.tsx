@@ -5,6 +5,7 @@ import Menu from "../menu_parts/menu";
 import Modal from "../home_parts/modal";
 import { useEffect } from "react";
 import { useCard } from "../../deckcontent";
+import { back } from "../back";
 export default function PerDeck() {
     const [menuopen, setMenuopen] = useState(false);
     const [isspecial, setIsSpecial] = useState(false);
@@ -12,6 +13,7 @@ export default function PerDeck() {
     const [totalspecialcard,settotalspecialcard] = useState(0);
     const maxcommoncard = 9;
     const maxspecialcard = 5;
+    const goback = back()
     const {
         cards,
         addcards,
@@ -84,9 +86,7 @@ export default function PerDeck() {
     return (
         <div className="w-screen h-screen bg-base-color">
             <div className="pt-3 flex justify-between px-4">
-                <Link to="/single">
-                        <div className="back_button">뒤로가기</div>
-                </Link>
+               <button className="back_button" onClick={()=>{goback()}}>뒤로가기</button>
                 <div>
                     {
                         isready ? (

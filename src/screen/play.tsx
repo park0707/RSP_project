@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@tanstack/react-router";
+import { back } from "./back";
 import Menu from "./menu_parts/menu";
 import { useState,useEffect } from "react";
 import { useCard } from "../deckcontent";
@@ -28,7 +28,7 @@ export default function Play() {
     const [oppflip, setoppFlip] = React.useState<'opening' | 'closing' | 'none'>('none');
     const [gamestart,setGamestart] = useState(true)
     const [gameend,setGameend] = useState(false);
-    
+    const goback = back()
     const getcardname = (id:number) => {
         switch(id){
             case 1: return "가위";
@@ -183,9 +183,7 @@ export default function Play() {
     return(
         <div className="bg-base-color w-screen h-screen">
             <div className="pt-3 flex justify-between px-4">
-                        <Link to="/perdeck">
-                                <div className="back_button">뒤로가기</div>
-                        </Link>
+                        <button className="back_button" onClick={()=>{goback()}}>뒤로가기</button>
                         <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(!menuopen)}
                         className="mid:w-[70px] mid:h-[70px]
                         w-[50px] h-[50px] cursor-pointer

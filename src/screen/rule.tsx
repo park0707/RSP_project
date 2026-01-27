@@ -1,19 +1,15 @@
-import { Link } from "@tanstack/react-router";
+import { back } from "./back";
 import { useState } from "react";
 import Menu from "./menu_parts/menu";
-
-import Modal from "./home_parts/modal";
-import { rule } from "postcss";
 export default function Rule () {
-    const [settingopen, setSettingopen] = useState(false);
+    const [menuopen, setMenuopen] = useState(false);
     const [ruletype,setRuletype] = useState(false); //false면 싱글 & 멀티 플레이 true면 도전
+    const goback = back()
     return (
         <div className="flex flex-col bg-base-color w-screen h-screen">
             <div className="pt-3 flex justify-between px-4">
-                           <Link to="/">
-                                   <button className="back_button">뒤로가기</button>
-                           </Link>
-                           <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setSettingopen(!settingopen)}
+                           <button className="back_button" onClick={()=>{goback()}}>뒤로가기</button>
+                           <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(!menuopen)}
                            className="mid:w-[70px] mid:h-[70px]
                            w-[50px] h-[50px] cursor-pointer
                            "/>
@@ -89,9 +85,7 @@ export default function Rule () {
 
 
 
-            <Modal isopen={settingopen} onClose={()=>setSettingopen(false)}>
-                <Menu/>
-            </Modal>
+           <Menu open={menuopen} setOpen={setMenuopen}/>
             
             
         </div>
