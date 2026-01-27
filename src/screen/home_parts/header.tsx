@@ -3,7 +3,7 @@ import { useState,useRef,useEffect } from "react";
 import Profile_unlog from "./profile_unlog.tsx";
 //import Profile_log from "./profile_log.tsx";
 import Modal from "./modal.tsx";
-import Setting from "./setting.tsx";
+import Setting from "../menu_parts/menu.tsx";
 export default function Header() {
 //  const [isLogin, setIsLogin] = useState(false);
   const [isopen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ export default function Header() {
             mid:w-[80px] mid:h-[80px] cursor-pointer
             " />
           </div>
-          <img src="/images/설정.png" alt="설정 아이콘" onClick={togglesetting}
+          <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={togglesetting}
           className="mid:w-[70px] mid:h-[70px]
           w-[50px] h-[50px] cursor-pointer
           "/>

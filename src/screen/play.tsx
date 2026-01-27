@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
-import Setting from "./home_parts/setting";
+import Setting from "./menu_parts/menu";
 import { useState,useEffect } from "react";
 import { useCard } from "../deckcontent";
 import Modal from "./home_parts/modal";
@@ -149,7 +149,7 @@ export default function Play() {
         }
     }, [gamestate]);
 
-    //타이머 재설정 부분
+    //타이머 재메뉴 부분
     useEffect(() => {
         setTimer(30);
     }, [reset]);
@@ -186,7 +186,7 @@ export default function Play() {
                         <Link to="/perdeck">
                                 <div className="back_button">뒤로가기</div>
                         </Link>
-                        <img src="/images/설정.png" alt="설정 아이콘" onClick={()=>setIsSettingOpen(!settingopen)}
+                        <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setIsSettingOpen(!settingopen)}
                         className="mid:w-[70px] mid:h-[70px]
                         w-[50px] h-[50px] cursor-pointer
                         "/>

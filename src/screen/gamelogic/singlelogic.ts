@@ -206,7 +206,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(oppcommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -241,7 +241,7 @@ import React from "react";
             }
             if(oppspecial === 15){ //상대가 모아니면도
                 setoppFlip('closing');
-                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setOppCommonCard(oppcommon);
                 mycommon = oppcommon
                 oppcommon = mycommominit
@@ -266,7 +266,7 @@ import React from "react";
             if(oppspecial !== 7 && oppspecial !== 14)
             {
                 setoppFlip('closing');
-                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 console.log('내 강타 적용',oppcommon)
                 setOppCommonCard(oppcommon);
                 setTimeout(() => {    
@@ -286,7 +286,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -323,7 +323,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     console.log('상대 모아니면도 적용',oppcommon)    
                     setTimeout(() => {    
@@ -357,7 +357,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -392,7 +392,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -432,7 +432,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -470,7 +470,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -506,7 +506,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -543,7 +543,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -582,7 +582,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -617,7 +617,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -649,7 +649,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -686,7 +686,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -720,7 +720,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -757,7 +757,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -791,7 +791,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -828,7 +828,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -872,7 +872,7 @@ import React from "react";
             if(oppspecial !== 7 && oppspecial !== 14)
             {
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -891,7 +891,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -926,7 +926,7 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
-                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                    oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
                     
                     setTimeout(() => {    
@@ -959,7 +959,7 @@ import React from "react";
             }
             if(oppspecial === 5){ //상대가 강타
                 setmyFlip('closing');
-                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                mycommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setMyCommonCard(mycommon);
                 setTimeout(() => {    
                     setmyFlip('opening');
@@ -993,7 +993,7 @@ import React from "react";
             }
             if(oppspecial === 15){ //상대가 모아니면도
                 setoppFlip('closing');
-                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재설정    
+                oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                 setOppCommonCard(oppcommon);
                 
                 setTimeout(() => {    

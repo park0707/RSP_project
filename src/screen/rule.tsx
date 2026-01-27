@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import Setting from "./home_parts/setting";
+import Setting from "./menu_parts/menu";
 
 import Modal from "./home_parts/modal";
 export default function Rule () {
@@ -12,7 +12,7 @@ export default function Rule () {
                            <Link to="/">
                                    <button className="back_button">뒤로가기</button>
                            </Link>
-                           <img src="/images/설정.png" alt="설정 아이콘" onClick={()=>setSettingopen(!settingopen)}
+                           <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setSettingopen(!settingopen)}
                            className="mid:w-[70px] mid:h-[70px]
                            w-[50px] h-[50px] cursor-pointer
                            "/>

@@ -1,7 +1,7 @@
 
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import Setting from "../home_parts/setting";
+import Setting from "../menu_parts/menu";
 import Modal from "../home_parts/modal";
 import { useEffect } from "react";
 import { useCard } from "../../deckcontent";
@@ -104,7 +104,7 @@ export default function PerDeck() {
                         )
                     }
                 </div>
-                <img src="/images/설정.png" alt="설정 아이콘" onClick={()=>setIsSettingOpen(!issettingopen)}
+                <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setIsSettingOpen(!issettingopen)}
                 className="mid:w-[70px] mid:h-[70px]
                 w-[50px] h-[50px] cursor-pointer
                 "/>
