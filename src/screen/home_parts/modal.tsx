@@ -9,11 +9,11 @@ export default function Modal({isopen, onClose, children}:ModalProps) {
 
     return (
         <>
-            <div className="bg-black/50 fixed inset-0 z-40" >
+            <div className="bg-black/50 fixed inset-0 z-[90]" onClick={()=>{onClose()}}>
                 
             </div>
-            <div className="fixed inset-0 z-50 flex items-center justify-center" onClick={onClose}>
-                <div className="relative" >
+            <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none" >
+                <div className="relative pointer-events-auto" onClick={(e) => e.stopPropagation()}>
                     {children}
                 </div>
                 

@@ -4,6 +4,8 @@ import { AudioProvider } from './audiocontext.tsx'
 import { useAudio } from './audiocontext.tsx'
 import { CardProvider } from './deckcontent.tsx'
 import { AuthProvider } from './logincontext.tsx'
+import { supabase } from './supabase.tsx'
+import { useEffect } from 'react'
 function AppContent() {
   const { clickvolume, clickmute, allvolume, allmute} = useAudio();
   //효과음 함수도 나중에 만들어야 함
@@ -23,7 +25,11 @@ function AppContent() {
   );
 }
 function App() {
-  
+  useEffect(() => {
+  supabase.from('profiles').select('*').limit(1).then(({ data, error }) => {
+    console.log('Supabase 연결 테스트:', data, error)
+  })
+}, [])
     return (
     <AuthProvider>
       <CardProvider>

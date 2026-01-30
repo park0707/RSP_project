@@ -1,6 +1,6 @@
 
 import { useAudio } from "../../audiocontext";
-export default function Menu() {
+export default function Setting() {
   const {
     allmute,
     effectmute,

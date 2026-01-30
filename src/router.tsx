@@ -41,7 +41,6 @@ const playRoute = createRoute({
     path: '/play',
     component: Play,
   })
-
 // 라우터 생성: 트리에 자식 라우트 추가
 export const router = createRouter({
   routeTree: rootRoute.addChildren([homeRoute, cardsRoute, ruleRoute, singleRoute, perDeckRoute, playRoute]),
