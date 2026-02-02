@@ -11,7 +11,7 @@ interface Menuprops
     setOpen:React.Dispatch<React.SetStateAction<boolean>>
 }
 export default function Menu({open,setOpen}:Menuprops){
-    const {islogin} = useAuth();
+    const {islogin,setislogin} = useAuth();
     const [settingopen,setSettingopen] = useState(false)
     const [loginopen,setloginopen] = useState(false)
     const [signupopen,setsignupopen] = useState(false)
@@ -30,7 +30,7 @@ export default function Menu({open,setOpen}:Menuprops){
                 `}>
                 <div className="text-white text-[40px] py-5 flex flex-col items-center justify-center px-2 cursor-pointer w-full h-full
                 gap-[10px]">
-                     {islogin ? (<div onClick={()=>{setloginopen(true)}}>로그아웃</div>):(
+                     {islogin ? (<div onClick={()=>{setislogin(false)}}>로그아웃</div>):(
                         <div onClick={()=>{setloginopen(true)}}>로그인/회원가입</div>
                      )}
                      <Link to="/">
@@ -65,7 +65,7 @@ export default function Menu({open,setOpen}:Menuprops){
                             <Login setter={setsignupopen}/>
                         </Modal>
                         <Modal isopen={signupopen} onClose={()=>{setsignupopen(false)}}>
-                            <Signup/>
+                            <Signup signupclose={()=>setsignupopen(false)}/>
                         </Modal>
                     </div>
             

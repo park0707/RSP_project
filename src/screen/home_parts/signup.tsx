@@ -1,7 +1,10 @@
 import { useState, type ChangeEvent} from "react";
 import { useEffect } from "react";
 import { supabase } from "../../supabase";
-export default function Signup() {
+interface signupprops {
+  signupclose : React.Dispatch<React.SetStateAction<boolean>>
+}
+export default function Signup({signupclose}:signupprops) {
   const [name,setname] = useState("")
   const [id,setid] = useState("");
   const [pw,setpw] = useState("");
@@ -11,6 +14,7 @@ export default function Signup() {
   const [idduple,setidduple] = useState(false) //아이디 중복 아닌지 확인 결과
   const [loading,setloading] = useState(false) //중복 버튼 눌림 방지 위해
   const [error,seterror] = useState<String|null>(null) //id 가져오는 데 실패한다면 그 이유 알기 위해
+  const [fine,setfine] = useState(false) //회원 가입 성공시 true로 전환
   const handlename = (e:ChangeEvent<HTMLInputElement>) => {
     setname(e.target.value);
   };
@@ -55,10 +59,10 @@ export default function Signup() {
  
 
     const { error: profileError } = await supabase.from("profiles").insert({
-      user_id: id,
+      user_id: id.trim(),
       user_name: name,
       pw: pw, 
-  });
+    });
 
     if (profileError) {
       console.error('profileError', profileError);
@@ -66,9 +70,15 @@ export default function Signup() {
       setloading(false);
       return;
     }
-
+    setfine(true)
     
   };
+  useEffect(()=>{
+    setTimeout(() => {
+      if(fine)
+        signupclose(false)
+    }, 1500);
+  },[fine])
   useEffect(()=>{
     if(pw === pwcheck)
       setsame(true)
@@ -85,7 +95,7 @@ const handleIdCheckClick = async () => {
   const { data, error } = await supabase
     .from("profiles")
     .select("user_id")
-    .eq("user_id", id);
+    .eq("user_id", id.trim());
 
   setloading(false);
   setidcheck(1); // “중복확인 함” 표시용
@@ -160,7 +170,8 @@ const handleIdCheckClick = async () => {
                 (error === "아이디중복미확인") ? 
                   <div>아이디 중복을 확인해주세요.</div> :
                 (error === "pw길이6미만") ?
-                  <div>비밀번호의 길이는 6이상 20이하여야 합니다.</div> : null
+                  <div>비밀번호의 길이는 6이상 20이하여야 합니다.</div> : (fine) ?
+                  <div>회원가입 성공</div> : null
                 
               }
             </div>
