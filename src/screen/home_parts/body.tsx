@@ -14,14 +14,14 @@ export default function Body() {
     mid:gap-[58px] mid:text-[36px]
      ">
         <Link to="/single">
-          <button className="home_button cursor-pointer">싱글 플레이</button>
+          <button className="home_button cursor-pointer hover:scale-110 transition-transform ">싱글 플레이</button>
         </Link>
-        <button className="home_button cursor-pointer" onClick={()=>{modaltoggle()}} >멀티 플레이</button>
+        <button className="home_button cursor-pointer hover:scale-110 transition-transform " onClick={()=>{modaltoggle()}} >멀티 플레이</button>
         <Link to="/cards">
-          <button className="home_button cursor-pointer">카드 보기</button>
+          <button className="home_button cursor-pointer hover:scale-110 transition-transform ">카드 보기</button>
         </Link>
         <Link to="/rule">
-          <button className="home_button cursor-pointer">규칙 설명</button>
+          <button className="home_button cursor-pointer hover:scale-110 transition-transform ">규칙 설명</button>
         </Link>
         
         

@@ -1,13 +1,13 @@
 import React from "react";
-import { back } from "./back";
-import Menu from "./menu_parts/menu";
+import { back } from "../back"; // Update the path to the correct location of the 'back' module
+import Menu from "../menu_parts/menu";
 import { useState,useEffect } from "react";
-import { useCard } from "../deckcontent";
-import Modal from "./home_parts/modal";
-import { specialeffect } from "./gamelogic/singlelogic";
+import { useCard } from "../../deckcontent";
+import Modal from "../home_parts/modal";
+import { specialeffect } from "../gamelogic/singlelogic";
 
-export default function Play() {
-    const {cards,removecards} = useCard();
+export default function RandomDeck() {
+    const {cards,removecards,addcards} = useCard();
     const [menuopen, setMenuopen] = React.useState(false);
     const [currentround, setcurrentround] = React.useState(1);
     const totalround = 9;
@@ -29,6 +29,7 @@ export default function Play() {
     const [gamestart,setGamestart] = useState(true)
     const [gameend,setGameend] = useState(false);
     const goback = back()
+    
     const getcardname = (id:number) => {
         switch(id){
             case 1: return "가위";
@@ -49,12 +50,6 @@ export default function Play() {
             
         }
     };
-      useEffect(() => {
-    console.log("cards 결과");
-    cards.forEach((c) => {
-      console.log(`id: ${c.id}, count: ${c.count}`);
-    });
-  }, [cards]);
     useEffect(()=>{
         
         const timer = setTimeout(() => {

@@ -4,10 +4,17 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import Modal from "./home_parts/modal";
 import { back } from "./back";
+import { randomdeck } from "./singles/randomdeck";
+import { useCard } from "../deckcontent";
 export default function Single() {
+    const {addcards,clearCards} = useCard()
     const [menuopen,setMenuopen] = useState(false)
     const [chal,setIsChal] = useState(false)
-    const [random,setRandom] = useState(false)
+    function randomhandler() {
+        clearCards()
+        randomdeck(addcards)
+    }
+    
     const goback = back()
     return (
         <div className="bg-base-color w-screen h-screen " >
@@ -19,16 +26,19 @@ export default function Single() {
                             "/>
                 </div>
                 <div className="flex flex-col text-white text-[60px] justify-center items-center gap-[70px] pt-[50px]">
-                    <Link to="/perdeck">
-                        <div className="border-white border-5 px-2 py-2 rounded-[30px] w-[500px] cursor-pointer">
+                    <Link to="/predeck">
+                        <div className="border-white border-5 px-2 py-2 rounded-[30px] w-[500px] cursor-pointer hover:scale-110 transition-transform ">
                             사전 덱 구성
                         </div>
                     </Link>
-                    <div className="border-white border-5 px-2 py-2 rounded-[30px] w-[500px] cursor-pointer"
-                    onClick={()=>{setRandom(true)}}>
-                        랜덤 덱
-                    </div>
-                    <div className="border-white border-5 px-2 py-2 rounded-[30px] w-[500px] cursor-pointer" 
+                    <Link to='/play'>
+                        <div className="border-white border-5 px-2 py-2 rounded-[30px] w-[500px] cursor-pointer hover:scale-110 transition-transform "
+                        onClick={()=>{randomhandler()}}>
+                            랜덤 덱
+                        </div>
+                    </Link>
+                    
+                    <div className="border-white border-5 px-2 py-2 rounded-[30px] w-[500px] cursor-pointer hover:scale-110 transition-transform " 
                     onClick={()=>{setIsChal(true)}}>
                         도전
                     </div>
@@ -41,13 +51,7 @@ export default function Single() {
                         </p>
                     </div>
                 </Modal>
-                <Modal isopen={random} onClose={()=>{setRandom(false)}}>
-                    <div className="bg-[#130637] border-white border-5 rounded-[30px] w-[628px] h-[215px] text-white flex items-center justify-center">
-                        <p className="text-[35px] flex items-center justify-center">
-                            랜덤덱은 현재 준비 중입니다.
-                        </p>
-                    </div>
-                </Modal>
+                
         </div>
     );
 }

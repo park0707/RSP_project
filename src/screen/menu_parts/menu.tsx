@@ -23,36 +23,64 @@ export default function Menu({open,setOpen}:Menuprops){
                 onClick={() => setOpen(false)}
                 />
             )}
-            <div className={`
-                fixed top-0 right-0 h-full w-[30%] z-50 bg-[#130637]
-                transform transition-transform duration-300 ease-out
-                ${open ? "translate-x-0" : "translate-x-full"}
-                `}>
-                <div className="text-white text-[40px] py-5 flex flex-col items-center justify-center px-2 cursor-pointer w-full h-full
-                gap-[10px]">
-                     {islogin ? (<div onClick={()=>{setislogin(false)}}>로그아웃</div>):(
-                        <div onClick={()=>{setloginopen(true)}}>로그인/회원가입</div>
-                     )}
-                     <Link to="/">
-                        <div>홈으로</div>
-                     </Link>
-                    <Link to="/single">
-                        <div>싱글 플레이</div>
-                    </Link>
-                    <div>멀티 플레이</div>
-                    <Link to="/cards"> 
-                        <div>카드 보기</div>   
-                    </Link>
-                    <Link to="/rule">
-                        <div>규칙 설명</div>
-                    </Link>  
-                     <div>개인정보 처리 방침</div>
-                     <div>문의 페이지</div>
-                     <div onClick={()=>setSettingopen(true)}>설정</div>
+        <div
+        className={`
+            fixed top-0 right-0 h-full w-[30%] z-50 bg-[#130637]
+            transform transition-transform duration-300 ease-out
+            ${open ? "translate-x-0" : "translate-x-full"}
+        `}
+        >
+        <div
+            className="
+            text-white text-[30px] py-10
+            flex flex-col items-stretch justify-center
+            px-6 cursor-pointer w-full h-full
+            gap-4
+            "
+        >
+            {islogin ? (
+            <div
+                onClick={() => {
+                setislogin(false);
+                }}
+                className="py-3 px-4 rounded-xl hover:bg-white/20 transition-colors text-center hover:scale-110 transition-transform "
+            >
+                로그아웃
+            </div>
+                ) : (
+                <div
+                    onClick={() => {
+                    setloginopen(true);
+                    }}
+                    className="py-3 px-4 rounded-xl  hover:bg-white/20 transition-colors text-center hover:scale-110 transition-transform "
+                >
+                    로그인 / 회원가입
+                </div>
+                )}
 
+                <Link to="/">
+                <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
+                    홈으로
+                </div>
+                </Link>
 
+                <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
+                개인정보 처리 방침
+                </div>
+
+                <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
+                문의 페이지
+                </div>
+
+                <div
+                onClick={() => setSettingopen(true)}
+                className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform "
+                >
+                설정
                 </div>
             </div>
+    </div>
+
             <Modal isopen={settingopen} onClose={()=>{setSettingopen(false)}}>
                 <Setting/>
             </Modal>
