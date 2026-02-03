@@ -74,10 +74,12 @@ export default function Menu({open,setOpen}:Menuprops){
                     개인정보 처리 방침
                     </div>
                 </Link>
-
-                <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
-                문의 페이지
-                </div>
+                <Link to="/contact">
+                    <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
+                        문의 페이지
+                    </div>
+                </Link>
+                
 
                 {
                     islogin ?
