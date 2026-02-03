@@ -7,6 +7,7 @@ import Rule from './screen/rule.tsx' // 규칙 설명 화면 컴포넌트
 import Single from './screen/single.tsx' // 싱글 플레이 화면 컴포넌트
 import PreDeck from './screen/singles/predeck.tsx' // 덱 선택 화면 컴포넌트
 import Play from './screen/play.tsx'
+import Imformation from './screen/menu_parts/information.tsx'
 // 루트 라우트: 페이지 전체 레이아웃을 담당
 const rootRoute = createRootRoute({
   component: RootComponent,
@@ -41,7 +42,12 @@ const playRoute = createRoute({
     path: '/play',
     component: Play,
   })
+const imformRoute = createRoute({
+  getParentRoute : ()=>rootRoute,
+  path:"/imformation",
+  component:Imformation
+})
 // 라우터 생성: 트리에 자식 라우트 추가
 export const router = createRouter({
-  routeTree: rootRoute.addChildren([homeRoute, cardsRoute, ruleRoute, singleRoute, perDeckRoute, playRoute]),
+  routeTree: rootRoute.addChildren([homeRoute, cardsRoute, ruleRoute, singleRoute, perDeckRoute, playRoute,imformRoute]),
 })

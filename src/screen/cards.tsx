@@ -1,6 +1,4 @@
-import { back } from "./back.ts";
 import { useState } from "react";
-import Menu from "./menu_parts/menu.tsx";
 import Modal from "./home_parts/modal.tsx";
 import Sisser from "./cards/sisser.tsx";
 import Rock from "./cards/rock.tsx";
@@ -17,12 +15,10 @@ import Defeat from "./cards/defeat.tsx";
 import Highriskhighreturn from "./cards/highriskhighreturn.tsx";
 import Cheat from "./cards/cheat.tsx";
 import Moordo from "./cards/moordo.tsx";
-
+import Innerheader from "./innerheader.tsx";
 export default function Cards() {
-    const [menuopen, setMenuopen] = useState(false);
-    const togglesetting = () => {
-        setMenuopen(!menuopen);
-    };
+    
+    
     const [moordo,setmoordo] = useState(false);
     const [cheat,setcheat] = useState(false);
     const [highriskhighreturn,sethighriskhighreturn] = useState(false);
@@ -39,16 +35,10 @@ export default function Cards() {
     const [block,setblock] = useState(false);
     const [steel,setsteel] = useState(false);
     const [watch,setwatch] = useState(false);
-    const goback = back();
+    
     return (
         <div className="flex flex-col bg-base-color w-screen h-screen">
-            <div className="pt-3 flex justify-between px-4">
-                <button className="back_button" onClick={()=>{goback()}}>뒤로가기</button>
-                <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={togglesetting}
-                className="mid:w-[70px] mid:h-[70px]
-                w-[50px] h-[50px] cursor-pointer
-                "/>
-            </div>
+            <Innerheader/>
             <div className="flex justify-center text-white text-[45px] gap-[30px]">
                 <div className="cursor-pointer border-4 border-white px-2 py-2 rounded-[20px]" onClick={()=>setspecial(false)}>
                     일반 카드
@@ -102,7 +92,7 @@ export default function Cards() {
             <Modal isopen={watch} onClose={()=>setwatch(false)}>
                 <Watch/>
             </Modal>
-            <Menu open={menuopen} setOpen={setMenuopen}/>
+            
             <Modal isopen={sisser} onClose={()=>setsisser(false)}>
                 <Sisser/>
             </Modal>

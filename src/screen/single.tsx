@@ -1,30 +1,22 @@
 
-import Menu from "./menu_parts/menu";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import Modal from "./home_parts/modal";
-import { back } from "./back";
 import { randomdeck } from "./singles/randomdeck";
 import { useCard } from "../deckcontent";
+import Innerheader from "./innerheader";
 export default function Single() {
     const {addcards,clearCards} = useCard()
-    const [menuopen,setMenuopen] = useState(false)
     const [chal,setIsChal] = useState(false)
     function randomhandler() {
         clearCards()
         randomdeck(addcards)
     }
     
-    const goback = back()
+    
     return (
         <div className="bg-base-color w-screen h-screen " >
-              <div className="pt-3 flex justify-between px-4">
-                            <button className="back_button" onClick={()=>{goback()}}>뒤로가기</button>
-                            <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(true)}
-                            className="mid:w-[70px] mid:h-[70px]
-                            w-[50px] h-[50px] cursor-pointer
-                            "/>
-                </div>
+              <Innerheader/>
                 <div className="flex flex-col text-white text-[60px] justify-center items-center gap-[70px] pt-[50px]">
                     <Link to="/predeck">
                         <div className="border-white border-5 px-2 py-2 rounded-[30px] w-[500px] cursor-pointer hover:scale-110 transition-transform ">
@@ -43,7 +35,7 @@ export default function Single() {
                         도전
                     </div>
                 </div>
-                <Menu open={menuopen} setOpen={setMenuopen}/>
+                
                 <Modal isopen={chal} onClose={()=>{setIsChal(false)}}>
                     <div className="bg-[#130637] border-white border-5 rounded-[30px] w-[628px] h-[215px] text-white flex items-center justify-center">
                         <p className="text-[35px] flex items-center justify-center">

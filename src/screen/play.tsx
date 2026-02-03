@@ -1,6 +1,5 @@
 import React from "react";
-import { back } from "./back";
-import Menu from "./menu_parts/menu";
+import Innerheader from "./innerheader";
 import { useState,useEffect } from "react";
 import { useCard } from "../deckcontent";
 import Modal from "./home_parts/modal";
@@ -8,7 +7,7 @@ import { specialeffect } from "./gamelogic/singlelogic";
 
 export default function Play() {
     const {cards,removecards} = useCard();
-    const [menuopen, setMenuopen] = React.useState(false);
+    
     const [currentround, setcurrentround] = React.useState(1);
     const totalround = 9;
     const [myscore, setMyScore] = React.useState(0);
@@ -28,7 +27,7 @@ export default function Play() {
     const [oppflip, setoppFlip] = React.useState<'opening' | 'closing' | 'none'>('none');
     const [gamestart,setGamestart] = useState(true)
     const [gameend,setGameend] = useState(false);
-    const goback = back()
+    
     const getcardname = (id:number) => {
         switch(id){
             case 1: return "가위";
@@ -113,7 +112,7 @@ export default function Play() {
             else{
                 setOppSpecialCard(0); //특수 카드 사용 안함
             } 
-            //setOppSpecialCard(9);  // 디버깅 위해서
+            setOppSpecialCard(15);  // 디버깅 위해서
             //setOppCommonCard(3)
             
             
@@ -188,13 +187,7 @@ export default function Play() {
     }, [mycommoncard]);
     return(
         <div className="bg-base-color w-screen h-screen">
-            <div className="pt-3 flex justify-between px-4">
-                        <button className="back_button" onClick={()=>{goback()}}>뒤로가기</button>
-                        <img src="/images/메뉴.png" alt="메뉴 아이콘" onClick={()=>setMenuopen(!menuopen)}
-                        className="mid:w-[70px] mid:h-[70px]
-                        w-[50px] h-[50px] cursor-pointer
-                        "/>
-            </div>
+            <Innerheader/>
             <div className="flex justify-between px-5 h-full">
                 <div className="items-center flex flex-col gap-[20px] justify-center h-screen pb-40"> 
                     {/*좌측 화면, 구성 요소 : 라운드 표기, 상대 점수, 내 점수, 타이머 */}
@@ -275,7 +268,7 @@ export default function Play() {
                     </div>
                 </div>
             </div>
-            <Menu open={menuopen} setOpen={setMenuopen}/>
+            
             <Modal isopen={notreadymodal} onClose={()=>setNotReadyModal(false)}>
                 <div className="text-white text-[24px] bg-[#130637] border-4 border-whtite p-5 rounded-[10px]">
                     일반 카드를 반드시 선택해야 합니다.

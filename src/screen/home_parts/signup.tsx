@@ -15,6 +15,8 @@ export default function Signup({signupclose}:signupprops) {
   const [loading,setloading] = useState(false) //중복 버튼 눌림 방지 위해
   const [error,seterror] = useState<String|null>(null) //id 가져오는 데 실패한다면 그 이유 알기 위해
   const [fine,setfine] = useState(false) //회원 가입 성공시 true로 전환
+  const [ispw,setispw] = useState(true) //비밀번호의 보이기
+  const [ispwch,setispwch] = useState(true) //비밀번호 확인의 보이기 
   const handlename = (e:ChangeEvent<HTMLInputElement>) => {
     setname(e.target.value);
   };
@@ -145,11 +147,25 @@ const handleIdCheckClick = async () => {
                 <div className=" text-[24px] pl-[16px]  pb-[5px]">비밀번호</div>
                 <div className="text-[#F30000] pt-[16px] tracking-[0.15em] text-[17px] ">*최소 6글자, 최대 20글자</div>
               </div>
-              <input type="password" value={pw} onChange={handlepw} maxLength={20} className="bg-[#D9D9D9] w-[381px] h-[50px] rounded-[25px] text-black text-[30px]"/>
+              <div className="bg-[#D9D9D9] w-[381px] h-[50px] rounded-[25px] flex">
+                <input type={ispw ? "password" : "text"} value={pw} onChange={handlepw} maxLength={20} className="border-none outline-none focus:outline-none text-black text-[30px]"/>
+                <div className="px-2 py-2 items-center justify-center flex">
+                  {
+                    ispw ? <img src="public\images\감은눈.png" alt="감은눈" onClick={()=>{setispw(false)}}/> : <img src="public\images\뜬눈.png" alt="뜬눈" onClick={()=>{setispw(true)}}/>
+                  }
+                </div>
+              </div>
             </div>
             <div className="flex flex-col items-start pt-[12px] pb-0">
               <div className=" text-[24px] pl-[16px]  pb-[5px]">비밀번호 확인</div>
-              <input type="password" value={pwcheck} onChange={handlepwcheck} className="bg-[#D9D9D9] w-[381px] h-[50px] rounded-[25px]  text-black text-[30px]"/>
+              <div className="bg-[#D9D9D9] w-[381px] h-[50px] rounded-[25px] flex">
+                <input type={ispwch ? "password" : "text"} value={pwcheck} onChange={handlepwcheck} maxLength={20} className="border-none outline-none focus:outline-none text-black text-[30px]"/>
+                <div className="px-2 py-2 items-center justify-center flex">
+                  {
+                    ispwch ? <img src="public\images\감은눈.png" alt="감은눈" onClick={()=>{setispwch(false)}}/> : <img src="public\images\뜬눈.png" alt="뜬눈" onClick={()=>{setispwch(true)}}/>
+                  }
+                </div>
+              </div>
               {
                 (pw === "") ? null :
                   same ? <div className="text-[#28b552] pt-[10px] tracking-[0.15em] text-[17px] pl-[16px]">

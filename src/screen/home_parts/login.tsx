@@ -5,11 +5,12 @@ interface LoginProps {
   setter: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function Login({setter}:LoginProps) {
-  const {setislogin} = useAuth()
+  const {setislogin,setgloid} = useAuth()
   const [id,setid] = useState("");
   const [pw,setpw] = useState("");
   const [error,seterror] = useState<string|null>(null) //에러 확인
   const [loading,setloading] = useState(false) //백엔드 접근 처리 중에는 버튼 눌리지 않도록
+  const [ispw,setispw] = useState(true)
   const handleid = (e:ChangeEvent<HTMLInputElement>) => {
     setid(e.target.value);
   };
@@ -57,6 +58,8 @@ export default function Login({setter}:LoginProps) {
     seterror('로그인 성공')
     setTimeout(() => {
       setislogin(true)
+      setgloid(user.user_id)
+      
     }, 1500);
     
   };
@@ -70,7 +73,14 @@ export default function Login({setter}:LoginProps) {
             </div>
             <div className="flex flex-col items-start ">
               <div className=" text-[36px] pl-[16px] pt-[16px]">비밀번호</div>
-              <input type="password" value={pw} onChange={handlepw} maxLength={20} disabled={loading} className="bg-[#D9D9D9] w-[381px] h-[77px] rounded-[25px] text-black text-[30px]"/>
+              <div className="bg-[#D9D9D9] w-[381px] h-[77px] rounded-[25px] flex">
+                <input type={ispw ? "password" : "test"} value={pw} onChange={handlepw} maxLength={20} disabled={loading} className="border-none outline-none focus:outline-none text-black text-[30px]"/>
+                <div className="px-2 py-2 items-center justify-center flex">
+                  {
+                    ispw ? <img src="public\images\감은눈.png" alt="감은눈" onClick={()=>{setispw(false)}}/> : <img src="public\images\뜬눈.png" alt="뜬눈" onClick={()=>{setispw(true)}}/>
+                  }
+                </div>
+              </div>
               
             </div>
             <div className="flex items-center justify-center text-[25px] px-5 py-5">

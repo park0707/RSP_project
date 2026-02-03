@@ -567,7 +567,7 @@ import React from "react";
             
         }
         if(myspecial === 10){ //공유
-            if(oppspecial !== 7 && oppspecial !== 14)
+            if(oppspecial !== 7 && oppspecial !== 14 && oppspecial !== 15)
             {
                 mycommon = oppcommoninit;
                 setMyCommonCard(oppcommoninit)
@@ -617,15 +617,19 @@ import React from "react";
             if(oppspecial === 15){ //상대가 모아니면도
                 setTimeout(() => {
                     setoppFlip('closing');
+                    setmyFlip('closing')
                     oppcommon = Math.floor(Math.random() * 3) + 1; //내 일반 카드를 랜덤으로 재메뉴    
                     setOppCommonCard(oppcommon);
-                    
+                    setMyCommonCard(oppcommon)
+                    mycommon = oppcommon
                     setTimeout(() => {    
                         setoppFlip('opening');
+                        setmyFlip('opening')
                         setTimeout(() => {       
                             vsresult = whosewin(mycommon, oppcommon); //일단 승패 판단
                             scorehandler(vsresult,setMyScore,setOppScore);
                             setoppFlip('none');
+                            setmyFlip('none')
                         }, 20);
                     }, 20);
                 }, 1000);

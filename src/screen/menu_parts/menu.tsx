@@ -10,8 +10,13 @@ interface Menuprops
     open:boolean;
     setOpen:React.Dispatch<React.SetStateAction<boolean>>
 }
+function logouthandler(setislogin:React.Dispatch<React.SetStateAction<boolean>>,setgloid:React.Dispatch<React.SetStateAction<String>>){
+    setislogin(false)
+    setgloid("")
+    
+}
 export default function Menu({open,setOpen}:Menuprops){
-    const {islogin,setislogin} = useAuth();
+    const {islogin,gloid,setislogin,setgloid} = useAuth();
     const [settingopen,setSettingopen] = useState(false)
     const [loginopen,setloginopen] = useState(false)
     const [signupopen,setsignupopen] = useState(false)
@@ -41,7 +46,7 @@ export default function Menu({open,setOpen}:Menuprops){
             {islogin ? (
             <div
                 onClick={() => {
-                setislogin(false);
+                logouthandler(setislogin,setgloid)
                 }}
                 className="py-3 px-4 rounded-xl hover:bg-white/20 transition-colors text-center hover:scale-110 transition-transform "
             >
@@ -64,13 +69,22 @@ export default function Menu({open,setOpen}:Menuprops){
                 </div>
                 </Link>
 
-                <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
-                개인정보 처리 방침
-                </div>
+                <Link to="/imformation">
+                    <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
+                    개인정보 처리 방침
+                    </div>
+                </Link>
 
                 <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
                 문의 페이지
                 </div>
+
+                {
+                    islogin ?
+                    <div className="py-3 px-4 rounded-xl hover:bg-white/10 transition-colors text-center hover:scale-110 transition-transform ">
+                        마이 페이지
+                    </div> : null
+                }
 
                 <div
                 onClick={() => setSettingopen(true)}
