@@ -77,7 +77,7 @@ export default function Login({setter}:LoginProps) {
                 <input type={ispw ? "password" : "test"} value={pw} onChange={handlepw} maxLength={20} disabled={loading} className="border-none outline-none focus:outline-none text-black text-[30px]"/>
                 <div className="px-2 py-2 items-center justify-center flex">
                   {
-                    ispw ? <img src="/imagfes/감은눈.png" alt="감은눈" onClick={()=>{setispw(false)}}/> : <img src="/imagfes/뜬눈.png" alt="뜬눈" onClick={()=>{setispw(true)}}/>
+                    ispw ? <img src="/images/감은눈.png" alt="감은눈" onClick={()=>{setispw(false)}}/> : <img src="/images/뜬눈.png" alt="뜬눈" onClick={()=>{setispw(true)}}/>
                   }
                 </div>
               </div>
